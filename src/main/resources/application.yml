@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: exam1
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://localhost:9411
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["health","info","metrics","prometheus"]
+  metrics:
+    tags:
+      application: ${spring.application.name}
+#logging:
+#  level:
+#    org.springframework: INFO
+#  file:
+#    path: /Users/a420466/Desktop/playground/efk/logs
+#    max-size: 500MB
+#    max-history: 10
+#  pattern:
+#    console: '[%d{yyyy-mm-dd HH:mm:ss SSS}] %-5level [%-30C{3} - %-4line]: %m%n'
+#    file: '[%d{yyyy-mm-dd HH:mm:ss SSS}] %-5level [%-30C{3} - %-4line]: %m%n'
